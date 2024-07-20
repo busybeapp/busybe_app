@@ -18,3 +18,10 @@ repos:
         entry: flutter analyze .
         language: system
         pass_filenames: false
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.21.3
+    hooks:
+      - id: commitizen
+        name: Lint commit message
+        stages:
+          - commit-msg
