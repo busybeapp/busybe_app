@@ -2,4 +2,4 @@ plugins:
   - "@semantic-release/commit-analyzer"
 
 branches:
-  - name: "master"
+  - name: main
