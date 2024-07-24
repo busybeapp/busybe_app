@@ -1,16 +1,30 @@
-# clearslate_app
+# BusyBe
 
-A new Flutter project.
+Buzz through your day with this easy to use todo and journaling app
 
-## Getting Started
+## Integration tests
 
-This project is a starting point for a Flutter application.
+### iOS
+#### Setup
+Install Ruby
+```shell
+brew install ruby
+brew link --overwrite ruby
+echo 'export PATH="/opt/homebrew/opt/ruby/bin:$PATH"' >> ~/.zshrc
+```
+Install cocoapods
+```shell
+brew install cocoapods
+brew link --overwrite cocoapods
+```
+Open iOS simulator
+```shell
+open -a Simulator
+```
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+#### Run
+```shell
+ flutter drive \
+  --driver=test_driver/integration_test.dart \
+  --target=integration_test/count_test.dart
+```
