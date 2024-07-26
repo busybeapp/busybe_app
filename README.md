@@ -1,4 +1,4 @@
-# BusyBe
+# BusyBe Application
 
 Buzz through your day with this easy to use todo and journaling app
 
