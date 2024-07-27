@@ -1,6 +1,18 @@
 # BusyBe Application
 
-Buzz through your day with this easy to use todo and journaling app.
+Buzz through your day with this easy to use todo and journaling app
+
+
+## Pre commit
+Install local pre-commit hook
+```shell
+pip install pre-commit
+pre-commit install
+```
+Install commit-msg hook
+```shell
+pre-commit install -t commit-msg
+```
 
 ## Integration tests
 
