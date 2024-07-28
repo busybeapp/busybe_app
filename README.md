@@ -1,4 +1,6 @@
-# BusyBe Application
+# BusyBe App
+[![test](https://github.com/busybeapp/app/actions/workflows/test.yml/badge.svg)](https://github.com/busybeapp/app/actions/workflows/test.yml)
+[![iOS](https://github.com/busybeapp/app/actions/workflows/ios-test.yml/badge.svg)](https://github.com/busybeapp/app/actions/workflows/ios-test.yml)
 
 Buzz through your day with this easy to use todo and journaling app
 
