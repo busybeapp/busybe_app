@@ -40,3 +40,12 @@ open -a Simulator
 ```shell
  make it-test
 ```
+
+## Mobile installation
+
+### iOS
+- Enable dev mode on your phone
+- Run
+```shell
+flutter run --release -d <device name>
+```
