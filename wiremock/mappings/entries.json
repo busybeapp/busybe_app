@@ -1,0 +1,20 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/entries"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "entries": [
+        {
+          "id": "1123-2342-3542-2344",
+          "title": "task1"
+        }
+      ]
+    },
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
