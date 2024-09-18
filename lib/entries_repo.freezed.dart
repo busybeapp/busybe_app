@@ -138,3 +138,124 @@ abstract class _Entry implements Entry {
   _$$EntryImplCopyWith<_$EntryImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
+
+/// @nodoc
+mixin _$Eli {
+  String get hello => throw _privateConstructorUsedError;
+
+  /// Create a copy of Eli
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  $EliCopyWith<Eli> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $EliCopyWith<$Res> {
+  factory $EliCopyWith(Eli value, $Res Function(Eli) then) =
+      _$EliCopyWithImpl<$Res, Eli>;
+  @useResult
+  $Res call({String hello});
+}
+
+/// @nodoc
+class _$EliCopyWithImpl<$Res, $Val extends Eli> implements $EliCopyWith<$Res> {
+  _$EliCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  /// Create a copy of Eli
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hello = null,
+  }) {
+    return _then(_value.copyWith(
+      hello: null == hello
+          ? _value.hello
+          : hello // ignore: cast_nullable_to_non_nullable
+              as String,
+    ) as $Val);
+  }
+}
+
+/// @nodoc
+abstract class _$$EliImplCopyWith<$Res> implements $EliCopyWith<$Res> {
+  factory _$$EliImplCopyWith(_$EliImpl value, $Res Function(_$EliImpl) then) =
+      __$$EliImplCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({String hello});
+}
+
+/// @nodoc
+class __$$EliImplCopyWithImpl<$Res> extends _$EliCopyWithImpl<$Res, _$EliImpl>
+    implements _$$EliImplCopyWith<$Res> {
+  __$$EliImplCopyWithImpl(_$EliImpl _value, $Res Function(_$EliImpl) _then)
+      : super(_value, _then);
+
+  /// Create a copy of Eli
+  /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? hello = null,
+  }) {
+    return _then(_$EliImpl(
+      hello: null == hello
+          ? _value.hello
+          : hello // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$EliImpl implements _Eli {
+  const _$EliImpl({required this.hello});
+
+  @override
+  final String hello;
+
+  @override
+  String toString() {
+    return 'Eli(hello: $hello)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$EliImpl &&
+            (identical(other.hello, hello) || other.hello == hello));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, hello);
+
+  /// Create a copy of Eli
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$EliImplCopyWith<_$EliImpl> get copyWith =>
+      __$$EliImplCopyWithImpl<_$EliImpl>(this, _$identity);
+}
+
+abstract class _Eli implements Eli {
+  const factory _Eli({required final String hello}) = _$EliImpl;
+
+  @override
+  String get hello;
+
+  /// Create a copy of Eli
+  /// with the given fields replaced by the non-null parameter values.
+  @override
+  @JsonKey(includeFromJson: false, includeToJson: false)
+  _$$EliImplCopyWith<_$EliImpl> get copyWith =>
+      throw _privateConstructorUsedError;
+}
