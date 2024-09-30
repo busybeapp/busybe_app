@@ -28,6 +28,8 @@ jobs:
         with:
           channel: 'stable'
 
+      - uses: docker-practice/actions-setup-docker
+
       - run: flutter pub get
 
       - run: docker-compose up -d
