@@ -1,6 +1,7 @@
+import 'package:clearslate_app/app.dart';
 import 'package:flutter/material.dart';
-import 'package:namer_app/app.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const ProviderScope(child: BusyBeApp()));
 }

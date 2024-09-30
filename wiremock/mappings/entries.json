@@ -1,7 +1,7 @@
 {
   "request": {
     "method": "GET",
-    "url": "/entries"
+    "url": "/api/entries"
   },
   "response": {
     "status": 200,
@@ -9,7 +9,11 @@
       "entries": [
         {
           "id": "1123-2342-3542-2344",
-          "title": "task1"
+          "title": "task 1"
+        },
+        {
+          "id": "1123-2342-3542-1144",
+          "title": "task 2"
         }
       ]
     },
