@@ -1,4 +1,4 @@
-name: clearslate_app
+name: busybe
 description: "A new Flutter project."
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
@@ -40,6 +40,7 @@ dev_dependencies:
   riverpod_generator: ^2.4.3
   custom_lint: ^0.6.7
   riverpod_lint: ^2.3.13
+  rename: ^3.0.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
