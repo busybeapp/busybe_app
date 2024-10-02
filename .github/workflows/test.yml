@@ -33,5 +33,5 @@ jobs:
       - run: flutter pub get
 
       - run: docker-compose up -d
-      - run: flutter test integration_test
+      - run: make integration-tests
       - run: docker-compose down
