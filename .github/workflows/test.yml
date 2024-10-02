@@ -28,9 +28,7 @@ jobs:
         with:
           channel: 'stable'
 
-      - run: brew install colima
-      - run: brew install docker
-      - run: colima start
+      - run: java --version
 
       - run: flutter pub get
 
