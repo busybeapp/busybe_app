@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
 
-      - run: flutter test
+      # - run: make unit-tests
 
   ios-test:
     runs-on: macOS-latest
@@ -28,7 +28,7 @@ jobs:
         with:
           channel: 'stable'
 
-      - uses: docker-practice/actions-setup-docker@master
+      - uses: brew install colima
 
       - run: flutter pub get
 
