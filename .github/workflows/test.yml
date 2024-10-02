@@ -28,7 +28,7 @@ jobs:
         with:
           channel: 'stable'
 
-      - uses: docker-practice/actions-setup-docker
+      - uses: docker-practice/actions-setup-docker@master
 
       - run: flutter pub get
 
