@@ -1,0 +1,8 @@
+POST https://clear-slate-8b4de92f5776.herokuapp.com/api/entries/
+
+{
+  "title": "Hello kuku"
+}
+
+### Get all entries
+GET https://clear-slate-8b4de92f5776.herokuapp.com/api/entries/
