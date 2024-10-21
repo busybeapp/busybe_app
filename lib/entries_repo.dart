@@ -22,7 +22,7 @@ class EntriesRepository {
   Future<List<Entry>> getEntries() async {
     final response = await dio.get("/api/entries");
     return List<Entry>.from(
-        response.data["entries"].map((model) => Entry(title: model["title"])));
+        response.data.map((model) => Entry(title: model["title"])));
   }
 }
 
