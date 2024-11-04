@@ -28,10 +28,11 @@ jobs:
         run: flutter build apk --release
 
       - name: Upload APK to Release
-        uses: ncipollo/release-action@v1
+        uses: ncipollo/release-action@v1.12.12
         with:
           tag: ${{ github.event.inputs.tag_name }}
-          release_name: 'Busybe APK'
+          name: 'Busybe APK'
           draft: false
           prerelease: false
-          files: build/app/outputs/flutter-apk/app-release.apk
+          artifacts: build/app/outputs/flutter-apk/app-release.apk
+          replacesArtifacts: true
