@@ -1,12 +1,8 @@
-name: Build APK
+name: Publish APK
 
 on:
-  workflow_dispatch:
-    inputs:
-      tag_name:
-        description: 'Busybe release'
-        required: true
-        default: '1.1.0'
+  release:
+    types: [published, edited]
 
 jobs:
   build-apk:
@@ -30,7 +26,7 @@ jobs:
       - name: Upload APK to Release
         uses: softprops/action-gh-release@v1
         with:
-          tag_name: ${{ github.event.inputs.tag_name }}
+          tag_name: ${{ github.event.release.tag_name }}
           files: build/app/outputs/flutter-apk/app-release.apk
           overwrite: true
         env:
