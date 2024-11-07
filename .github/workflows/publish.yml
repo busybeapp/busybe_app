@@ -3,8 +3,8 @@ name: Publish APK
 on:
   release:
     types: 
-    - published
-    - edited
+      - published
+      - edited
 
 jobs:
   build-apk:
