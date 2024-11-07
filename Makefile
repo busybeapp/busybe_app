@@ -11,7 +11,7 @@ unit-tests:
 
 start-wiremock:
 	$(MAKE) stop-wiremock || echo "Wiremock not running"
-	java -jar wiremock/wiremock-standalone.jar --root-dir wiremock
+	exec -a wiremock java -jar wiremock/wiremock-standalone.jar --root-dir wiremock
 
 stop-wiremock:
 	pkill -f "wiremock-standalone"
