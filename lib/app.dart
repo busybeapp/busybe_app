@@ -47,6 +47,7 @@ class InboxCollection extends ConsumerWidget {
             return _buildEntry(value[index], index);
           },
         ),
+      AsyncError() => const Text("oops, something is wrong"),
       _ => const CircularProgressIndicator()
     };
   }

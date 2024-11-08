@@ -19,7 +19,7 @@ Map<String, dynamic> _$$EntryImplToJson(_$EntryImpl instance) =>
 // RiverpodGenerator
 // **************************************************************************
 
-String _$entriesRepositoryHash() => r'6756a883e83bf70fe87aa5f7388c9730f2d88721';
+String _$entriesRepositoryHash() => r'6c526001a8a3a36211d57cf6ba34cd5016f44e26';
 
 /// See also [entriesRepository].
 @ProviderFor(entriesRepository)
@@ -34,8 +34,10 @@ final entriesRepositoryProvider =
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef EntriesRepositoryRef = AutoDisposeProviderRef<EntriesRepository>;
-String _$getEntriesHash() => r'e5ca840f4a7d4cb01eed14df146c6257466b3de4';
+String _$getEntriesHash() => r'41b223aae052416398ccb2e0800fafc53e1836bd';
 
 /// See also [getEntries].
 @ProviderFor(getEntries)
@@ -48,6 +50,8 @@ final getEntriesProvider = AutoDisposeFutureProvider<List<Entry>>.internal(
   allTransitiveDependencies: null,
 );
 
+@Deprecated('Will be removed in 3.0. Use Ref instead')
+// ignore: unused_element
 typedef GetEntriesRef = AutoDisposeFutureProviderRef<List<Entry>>;
 // ignore_for_file: type=lint
-// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member
+// ignore_for_file: subtype_of_sealed_class, invalid_use_of_internal_member, invalid_use_of_visible_for_testing_member, deprecated_member_use_from_same_package
