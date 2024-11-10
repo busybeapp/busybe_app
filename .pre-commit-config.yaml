@@ -18,7 +18,7 @@ repos:
         name: Dart Formatter
         entry: dart format . --set-exit-if-changed
         language: system
-        types: [ dart ]
+        types: [dart]
         pass_filenames: false
       - id: Flutter analyze
         name: Flutter analyzer
