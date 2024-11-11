@@ -34,7 +34,7 @@ jobs:
       - name: Run integration tests
         run: |
           make start-wiremock &
-          make integration-tests
+          make integration-tests-ios
 
   android-test:
     runs-on: ubuntu-latest
@@ -62,4 +62,8 @@ jobs:
           api-level: 29
           script: |
             make start-wiremock &
-            make integration-tests
+            make integration-tests-android
+
+      - name: Stop Android Emulator
+        run: |
+          adb -s emulator-5554 emu kill
