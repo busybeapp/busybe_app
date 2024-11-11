@@ -34,7 +34,7 @@ jobs:
       - name: Run integration tests
         run: |
           make start-wiremock &
-          make integration-tests-ios
+          make integration-tests
 
   android-test:
     runs-on: ubuntu-latest
