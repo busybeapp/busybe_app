@@ -62,7 +62,7 @@ jobs:
           api-level: 29
           script: |
             make start-wiremock &
-            make integration-tests-android
+            make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
 
       - name: Stop Android Emulator
         run: |
