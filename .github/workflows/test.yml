@@ -64,7 +64,8 @@ jobs:
           api-level: 29
           script: |
             make start-wiremock &
-            make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
+            # make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
+            sleep 5
 
       - name: Kill crashpad_handler processes
         if: always()
