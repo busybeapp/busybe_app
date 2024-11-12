@@ -16,7 +16,6 @@ jobs:
 
   ios-test:
     runs-on: macos-latest
-    timout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
@@ -33,13 +32,13 @@ jobs:
       - run: flutter pub get
 
       - name: Run integration tests
+        timout-minutes: 15
         run: |
           make start-wiremock &
           make integration-tests
 
   android-test:
     runs-on: ubuntu-latest
-    timout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
@@ -66,4 +65,4 @@ jobs:
             trap "make stop-wiremock" EXIT
             make start-wiremock &
             make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
-          timeout-minutes: 10
+          timeout-minutes: 15
