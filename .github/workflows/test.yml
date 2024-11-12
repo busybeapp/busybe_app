@@ -66,5 +66,9 @@ jobs:
             make start-wiremock &
             make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
 
-      - name: Force Kill Emulator
-        run: pkill -f emulator || true
+      - name: Kill crashpad_handler processes
+        if: always()
+        run: |
+          pkill -SIGTERM crashpad_handler || true
+          sleep 5
+          pkill -SIGKILL crashpad_handler || true
