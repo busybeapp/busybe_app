@@ -63,9 +63,9 @@ jobs:
         with:
           api-level: 29
           script: |
-            # make start-wiremock &
-            # make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
-            sleep 5
+            make start-wiremock &
+            make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
+            make stop-wiremock
 
       - name: Kill crashpad_handler processes
         if: always()
@@ -73,6 +73,3 @@ jobs:
           pkill -SIGTERM crashpad_handler || true
           sleep 5
           pkill -SIGKILL crashpad_handler || true
-
-      # - name: Stop wiremock
-      #   run: make stop-wiremock
