@@ -16,6 +16,7 @@ jobs:
 
   ios-test:
     runs-on: macos-latest
+    timout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
@@ -38,6 +39,7 @@ jobs:
 
   android-test:
     runs-on: ubuntu-latest
+    timout-minutes: 15
 
     steps:
       - uses: actions/checkout@v4
