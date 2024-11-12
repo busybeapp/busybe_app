@@ -38,7 +38,7 @@ jobs:
           make integration-tests
 
   android-test:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
       - uses: actions/checkout@v4
@@ -63,6 +63,5 @@ jobs:
         with:
           api-level: 29
           script: |
-            trap "make stop-wiremock" EXIT
             make start-wiremock &
             make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
