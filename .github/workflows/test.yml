@@ -35,7 +35,7 @@ jobs:
       - name: Run integration tests
         run: |
           make start-wiremock &
-          make integration-tests-ios
+          make integration-tests
 
   android-test:
     runs-on: ubuntu-latest
@@ -63,9 +63,7 @@ jobs:
         with:
           api-level: 29
           script: |
+            trap "make stop-wiremock" EXIT
             make start-wiremock &
             make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
-
-      - name: Stop Android Emulator
-        run: |
-          adb -s emulator-5554 emu kill
+          timeout-minutes: 10
