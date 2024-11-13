@@ -6,6 +6,8 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'entries_repo.freezed.dart';
 part 'entries_repo.g.dart';
 
+const cloudUrl = 'https://clear-slate-8b4de92f5776.herokuapp.com';
+
 @freezed
 class Entry with _$Entry {
   const factory Entry({required String title}) = _Entry;
@@ -29,8 +31,8 @@ class EntriesRepository {
 
 @riverpod
 EntriesRepository entriesRepository(Ref ref) {
-  return EntriesRepository(const String.fromEnvironment('CLOUD_URL',
-      defaultValue: 'https://clear-slate-8b4de92f5776.herokuapp.com'));
+  return EntriesRepository(
+      const String.fromEnvironment('CLOUD_URL', defaultValue: cloudUrl));
 }
 
 @riverpod
