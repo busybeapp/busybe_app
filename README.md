@@ -50,5 +50,5 @@ flutter build ios
 ```
 - Install
 ```shell
-flutter run --release -d <device name>
+flutter run --release -d <device id>
 ```
