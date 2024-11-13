@@ -44,7 +44,11 @@ open -a Simulator
 
 ### iOS
 - Enable dev mode on your phone
-- Run
+- Build for target
+```shell
+flutter build ios
+```
+- Install
 ```shell
 flutter run --release -d <device name>
 ```
