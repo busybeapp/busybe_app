@@ -31,10 +31,11 @@ jobs:
 
       - run: flutter pub get
 
+      - run: make start-wiremock &
+
       - name: Run integration tests
         timeout-minutes: 15
         run: |
-          make start-wiremock &
           make integration-tests
 
   android-test:
@@ -57,6 +58,8 @@ jobs:
 
       - run: flutter pub get
 
+      - run: make start-wiremock &
+
       - name: Run integration tests
         uses: reactivecircus/android-emulator-runner@v2
         timeout-minutes: 15
@@ -65,6 +68,4 @@ jobs:
         with:
           api-level: 29
           script: |
-            make start-wiremock &
             make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
-            make stop-wiremock
