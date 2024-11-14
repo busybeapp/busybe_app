@@ -1,8 +1,7 @@
 # BusyBe App
 [![test](https://github.com/busybeapp/app/actions/workflows/test.yml/badge.svg)](https://github.com/busybeapp/app/actions/workflows/test.yml)
-[![iOS](https://github.com/busybeapp/app/actions/workflows/ios-test.yml/badge.svg)](https://github.com/busybeapp/app/actions/workflows/ios-test.yml)
 
-Buzz through your day with this easy to use todo and journaling app
+Buzz through your day with this easy to use to-do and journaling app
 
 
 ## Pre commit
@@ -45,7 +44,11 @@ open -a Simulator
 
 ### iOS
 - Enable dev mode on your phone
-- Run
+- Build for target
 ```shell
-flutter run --release -d <device name>
+flutter build ios
+```
+- Install
+```shell
+flutter run --release -d <device id>
 ```

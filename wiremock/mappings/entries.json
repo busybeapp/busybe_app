@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/api/entries"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": [
+      {
+        "id": "1123-2342-3542-2344",
+        "title": "popo 1"
+      },
+      {
+        "id": "1123-2342-3542-1144",
+        "title": "kuku 2"
+      }
+    ],
+    "headers": {
+      "Content-Type": "application/json"
+    }
+  }
+}
