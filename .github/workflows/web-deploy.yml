@@ -2,7 +2,7 @@ name: Web Deploy
 
 on:
   push:
-    - branchs: [main, elis/web-deploy]
+    branchs: [main, elis/web-deploy]
 
 jobs:
   deploy:
