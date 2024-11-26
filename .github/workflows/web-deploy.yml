@@ -2,7 +2,6 @@ name: Web Deploy
 
 on:
   pull_request:
-    branches: [main, elis/web-deploy]
   push:
     branchs: [main, elis/web-deploy]
 
