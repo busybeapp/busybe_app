@@ -1,0 +1,14 @@
+name: Web Deploy
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      name: Hello
+      run: echo Hello
