@@ -30,7 +30,8 @@ jobs:
 
       - name: Push Web App
         run: |
-          rm -Rf webapp/*
-          cp -r build/web/* webapp/
+          cd webapp
+          rm -Rf *
+          cp -r ../build/web/* .
           git add .
           git push origin main
