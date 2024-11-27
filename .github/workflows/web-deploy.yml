@@ -26,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: busybeapp/busybe-web-app
+          token: ${{ secrets.CLEARSLATE_PAT }}
           path: webapp
 
       - name: Push Web App
