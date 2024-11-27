@@ -32,8 +32,7 @@ jobs:
       - name: Push Web App
         run: |
           cd webapp
-          rm -Rf *
-          cp -r ../build/web/ app
+          cp -r ../build/web/ docs
           git config user.name "web-deploy"
           git config user.email "web-deploy@github.com"
           git add .
