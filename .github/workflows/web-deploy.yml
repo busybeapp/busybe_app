@@ -33,6 +33,9 @@ jobs:
         run: |
           cd webapp
           rm -Rf *
-          cp -r ../build/web/* .
+          cp -r ../build/web/ app
+          git config user.name "web-deploy"
+          git config user.email "web-deploy@github.com"
           git add .
+          git commit -m "deploy"
           git push origin main
