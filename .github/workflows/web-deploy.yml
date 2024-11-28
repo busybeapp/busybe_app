@@ -20,7 +20,7 @@ jobs:
         run: flutter pub get
 
       - name: Build Web App
-        run: flutter build web
+        run: flutter build web --base-href /${{ github.event.repository.name }}/
 
       - name: Checkout Web App
         uses: actions/checkout@v4
