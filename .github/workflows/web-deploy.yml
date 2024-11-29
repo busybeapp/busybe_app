@@ -36,5 +36,5 @@ jobs:
           git config user.name "web-deploy"
           git config user.email "web-deploy@github.com"
           git add .
-          git commit -m "deploy"
+          git commit -m "Deploy to busybeapp/busybe-web-app"
           git push origin main
