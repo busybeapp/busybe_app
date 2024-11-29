@@ -3,7 +3,7 @@ name: Web Deploy
 on:
   pull_request:
   push:
-    branchs: [main, elis/web-deploy]
+    branchs: [ main ]
 
 jobs:
   deploy:
