@@ -19,7 +19,7 @@ Map<String, dynamic> _$$EntryImplToJson(_$EntryImpl instance) =>
 // RiverpodGenerator
 // **************************************************************************
 
-String _$entriesRepositoryHash() => r'6c526001a8a3a36211d57cf6ba34cd5016f44e26';
+String _$entriesRepositoryHash() => r'7d38171858bdcaa521e2424d4cf3e5385dac06a9';
 
 /// See also [entriesRepository].
 @ProviderFor(entriesRepository)
@@ -37,7 +37,7 @@ final entriesRepositoryProvider =
 @Deprecated('Will be removed in 3.0. Use Ref instead')
 // ignore: unused_element
 typedef EntriesRepositoryRef = AutoDisposeProviderRef<EntriesRepository>;
-String _$getEntriesHash() => r'41b223aae052416398ccb2e0800fafc53e1836bd';
+String _$getEntriesHash() => r'f9afde623fd8dc1c8aed5c3544f0a0e2be2ef8eb';
 
 /// See also [getEntries].
 @ProviderFor(getEntries)
