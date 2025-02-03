@@ -56,6 +56,16 @@ jobs:
           sudo udevadm control --reload-rules
           sudo udevadm trigger --name-match=kvm
 
+      - name: Clean and Reinstall Android SDK
+        run: |
+          rm -rf /usr/local/lib/android/sdk/platforms/android-35
+          yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --sdk_root=$ANDROID_HOME "platforms;android-34"
+
+      - name: Force compileSdkVersion to 34
+        run: |
+          sed -i 's/compileSdkVersion [0-9]*/compileSdkVersion 34/g' android/app/build.gradle
+          sed -i 's/targetSdkVersion [0-9]*/targetSdkVersion 34/g' android/app/build.gradle
+
       - run: flutter pub get
 
       - run: make start-wiremock &
