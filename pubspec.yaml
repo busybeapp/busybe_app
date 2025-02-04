@@ -33,7 +33,7 @@ dev_dependencies:
   integration_test:
     sdk: flutter
   shelf: ^1.4.1
-  build_runner: ^2.4.12
+  build_runner: ^2.4.14
   freezed: ^2.5.7
   json_serializable: ^6.8.0
   riverpod_generator: ^2.4.3
