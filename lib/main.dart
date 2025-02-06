@@ -6,5 +6,15 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   SemanticsBinding.instance.ensureSemantics();
-  runApp(const ProviderScope(child: BusyBeApp()));
+
+  debugSemanticsDisableAnimations = false;
+
+  runApp(
+    ProviderScope(
+      child: Semantics(
+        enabled: true,
+        child: const BusyBeApp(),
+      ),
+    ),
+  );
 }
