@@ -14,5 +14,6 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.29.0"
-        run: dart --version
+      - run: dart --version
+      - run: flutter --version
       - uses: pre-commit/action@v3.0.1
