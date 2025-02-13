@@ -2,8 +2,6 @@ name: pre-commit
 
 on:
   pull_request:
-  push:
-    branches: [main]
 
 jobs:
   pre-commit:
@@ -14,6 +12,5 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.29.0"
-      - run: dart --version
-      - run: flutter --version
+      - run: file --mime lib/app.dart
       - uses: pre-commit/action@v3.0.1
