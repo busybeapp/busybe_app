@@ -1,7 +1,6 @@
 name: Web Deploy
 
 on:
-  pull_request:
   push:
     branchs: [ main ]
     tags:
@@ -16,7 +15,8 @@ jobs:
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.27.4"
+          channel: stable
+          flutter-version: "3.x"
 
       - name: Install Dependencies
         run: flutter pub get

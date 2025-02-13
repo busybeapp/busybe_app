@@ -9,6 +9,9 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.x"
 
       # - run: make unit-tests
 
@@ -25,6 +28,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+          flutter-version: "3.x"
           cache: true
 
       - run: flutter pub get
@@ -44,7 +48,8 @@ jobs:
 
       - uses: subosito/flutter-action@v2
         with:
-          channel: "stable"
+          channel: stable
+          flutter-version: "3.x"
           cache: true
 
       - name: Enable KVM
