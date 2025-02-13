@@ -25,5 +25,3 @@ repos:
         entry: flutter analyze .
         language: system
         pass_filenames: false
-
-exclude: 'pubspec.lock'
