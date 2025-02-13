@@ -33,15 +33,13 @@ mixin _$Entry {
 
 /// @nodoc
 abstract class $EntryCopyWith<$Res> {
-  factory $EntryCopyWith(Entry value, $Res Function(Entry) then) =
-      _$EntryCopyWithImpl<$Res, Entry>;
+  factory $EntryCopyWith(Entry value, $Res Function(Entry) then) = _$EntryCopyWithImpl<$Res, Entry>;
   @useResult
   $Res call({String title});
 }
 
 /// @nodoc
-class _$EntryCopyWithImpl<$Res, $Val extends Entry>
-    implements $EntryCopyWith<$Res> {
+class _$EntryCopyWithImpl<$Res, $Val extends Entry> implements $EntryCopyWith<$Res> {
   _$EntryCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
@@ -67,21 +65,16 @@ class _$EntryCopyWithImpl<$Res, $Val extends Entry>
 
 /// @nodoc
 abstract class _$$EntryImplCopyWith<$Res> implements $EntryCopyWith<$Res> {
-  factory _$$EntryImplCopyWith(
-          _$EntryImpl value, $Res Function(_$EntryImpl) then) =
-      __$$EntryImplCopyWithImpl<$Res>;
+  factory _$$EntryImplCopyWith(_$EntryImpl value, $Res Function(_$EntryImpl) then) = __$$EntryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String title});
 }
 
 /// @nodoc
-class __$$EntryImplCopyWithImpl<$Res>
-    extends _$EntryCopyWithImpl<$Res, _$EntryImpl>
+class __$$EntryImplCopyWithImpl<$Res> extends _$EntryCopyWithImpl<$Res, _$EntryImpl>
     implements _$$EntryImplCopyWith<$Res> {
-  __$$EntryImplCopyWithImpl(
-      _$EntryImpl _value, $Res Function(_$EntryImpl) _then)
-      : super(_value, _then);
+  __$$EntryImplCopyWithImpl(_$EntryImpl _value, $Res Function(_$EntryImpl) _then) : super(_value, _then);
 
   /// Create a copy of Entry
   /// with the given fields replaced by the non-null parameter values.
@@ -104,8 +97,7 @@ class __$$EntryImplCopyWithImpl<$Res>
 class _$EntryImpl implements _Entry {
   const _$EntryImpl({required this.title});
 
-  factory _$EntryImpl.fromJson(Map<String, dynamic> json) =>
-      _$$EntryImplFromJson(json);
+  factory _$EntryImpl.fromJson(Map<String, dynamic> json) => _$$EntryImplFromJson(json);
 
   @override
   final String title;
@@ -132,8 +124,7 @@ class _$EntryImpl implements _Entry {
   @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
-  _$$EntryImplCopyWith<_$EntryImpl> get copyWith =>
-      __$$EntryImplCopyWithImpl<_$EntryImpl>(this, _$identity);
+  _$$EntryImplCopyWith<_$EntryImpl> get copyWith => __$$EntryImplCopyWithImpl<_$EntryImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
@@ -155,6 +146,5 @@ abstract class _Entry implements Entry {
   /// with the given fields replaced by the non-null parameter values.
   @override
   @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$EntryImplCopyWith<_$EntryImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$EntryImplCopyWith<_$EntryImpl> get copyWith => throw _privateConstructorUsedError;
 }

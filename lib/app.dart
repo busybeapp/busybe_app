@@ -78,10 +78,7 @@ class ListHeader extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               'Inbox',
-              style: TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Kanit"),
+              style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold, fontFamily: "Kanit"),
             )));
   }
 }
