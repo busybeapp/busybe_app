@@ -11,7 +11,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: "3.x.x"
+          flutter-version: "3.x"
 
       # - run: make unit-tests
 
@@ -28,7 +28,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: "3.x.x"
+          flutter-version: "3.x"
           cache: true
 
       - run: flutter pub get
@@ -49,7 +49,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
-          flutter-version: "3.29.0"
+          flutter-version: "3.x"
           cache: true
 
       - name: Enable KVM
