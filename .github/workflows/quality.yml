@@ -5,15 +5,11 @@ on:
 
 jobs:
   pre-commit:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.29.0"
-      - name: Convert Files to UTF-8
-        run: find . -name "*.dart" -exec bash -c 'iconv -f ASCII -t UTF-8 "{}" -o "{}"' \;
-      - name: Debug Dart Format
-        run: file -i lib/app.dart
       - uses: pre-commit/action@v3.0.1
