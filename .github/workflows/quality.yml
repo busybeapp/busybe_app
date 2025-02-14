@@ -12,4 +12,6 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: "3.29.0"
+      - name: Debug Dart Format
+        run: dart format --output=show .
       - uses: pre-commit/action@v3.0.1
