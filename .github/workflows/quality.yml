@@ -13,5 +13,5 @@ jobs:
         with:
           flutter-version: "3.29.0"
       - name: Debug Dart Format
-        run: dart format --output=show .
+        run: file -i lib/app.dart
       - uses: pre-commit/action@v3.0.1
