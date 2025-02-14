@@ -16,7 +16,7 @@ repos:
     hooks:
       - id: Dart format
         name: Dart Formatter
-        entry: dart format . --set-exit-if-changed --line-length 120
+        entry: dart --version && dart format . --set-exit-if-changed --line-length 120
         language: system
         types: [dart]
         pass_filenames: false
