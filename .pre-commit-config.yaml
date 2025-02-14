@@ -14,13 +14,18 @@ repos:
           - commit-msg
   - repo: local
     hooks:
-      - id: Dart format
+      - id: dart-version
+        name: Dart version
+        entry: dart --version
+        language: system
+        pass_filenames: false
+      - id: dart-format
         name: Dart Formatter
         entry: dart --version && dart format . --set-exit-if-changed --line-length 120
         language: system
         types: [dart]
         pass_filenames: false
-      - id: Flutter analyze
+      - id: flutter-analyze
         name: Flutter analyzer
         entry: flutter analyze .
         language: system
