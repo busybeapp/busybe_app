@@ -9,7 +9,7 @@ repos:
     rev: v4.2.1
     hooks:
       - id: commitizen
-        name: Lint commit message
+        name: Commit message linter
         stages:
           - commit-msg
   - repo: local
