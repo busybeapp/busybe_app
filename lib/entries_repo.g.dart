@@ -10,7 +10,8 @@ _$EntryImpl _$$EntryImplFromJson(Map<String, dynamic> json) => _$EntryImpl(
       title: json['title'] as String,
     );
 
-Map<String, dynamic> _$$EntryImplToJson(_$EntryImpl instance) => <String, dynamic>{
+Map<String, dynamic> _$$EntryImplToJson(_$EntryImpl instance) =>
+    <String, dynamic>{
       'title': instance.title,
     };
 
@@ -22,10 +23,13 @@ String _$entriesRepositoryHash() => r'7d38171858bdcaa521e2424d4cf3e5385dac06a9';
 
 /// See also [entriesRepository].
 @ProviderFor(entriesRepository)
-final entriesRepositoryProvider = AutoDisposeProvider<EntriesRepository>.internal(
+final entriesRepositoryProvider =
+    AutoDisposeProvider<EntriesRepository>.internal(
   entriesRepository,
   name: r'entriesRepositoryProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$entriesRepositoryHash,
+  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product')
+      ? null
+      : _$entriesRepositoryHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );
@@ -40,7 +44,8 @@ String _$getEntriesHash() => r'f9afde623fd8dc1c8aed5c3544f0a0e2be2ef8eb';
 final getEntriesProvider = AutoDisposeFutureProvider<List<Entry>>.internal(
   getEntries,
   name: r'getEntriesProvider',
-  debugGetCreateSourceHash: const bool.fromEnvironment('dart.vm.product') ? null : _$getEntriesHash,
+  debugGetCreateSourceHash:
+      const bool.fromEnvironment('dart.vm.product') ? null : _$getEntriesHash,
   dependencies: null,
   allTransitiveDependencies: null,
 );

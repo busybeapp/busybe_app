@@ -10,9 +10,7 @@ class BusyBeApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'busybe',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const InboxCollection(),
     );
   }
@@ -78,7 +76,10 @@ class ListHeader extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: Text(
               'Inbox',
-              style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold, fontFamily: "Kanit"),
+              style: TextStyle(
+                  fontSize: 48,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Kanit"),
             )));
   }
 }
