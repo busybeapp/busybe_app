@@ -1,26 +1,25 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v5.0.0
     hooks:
       - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
   - repo: https://github.com/commitizen-tools/commitizen
-    rev: v3.21.3
+    rev: v4.2.1
     hooks:
       - id: commitizen
-        name: Lint commit message
+        name: Commit message linter
         stages:
           - commit-msg
   - repo: local
     hooks:
-      - id: Dart format
+      - id: dart-format
         name: Dart Formatter
-        entry: dart format . --set-exit-if-changed
+        entry: dart format --set-exit-if-changed .
         language: system
-        types: [dart]
         pass_filenames: false
-      - id: Flutter analyze
+      - id: flutter-analyze
         name: Flutter analyzer
         entry: flutter analyze .
         language: system

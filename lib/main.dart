@@ -10,11 +10,6 @@ void main() {
   debugSemanticsDisableAnimations = false;
 
   runApp(
-    ProviderScope(
-      child: Semantics(
-        enabled: true,
-        child: const BusyBeApp(),
-      ),
-    ),
+    ProviderScope(child: Semantics(enabled: true, child: const BusyBeApp())),
   );
 }

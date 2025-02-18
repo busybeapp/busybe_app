@@ -10,9 +10,7 @@ class BusyBeApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'busybe',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+      theme: ThemeData(primarySwatch: Colors.blue),
       home: const InboxCollection(),
     );
   }
@@ -27,15 +25,20 @@ class InboxCollection extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final entriesAsync = ref.watch(getEntriesProvider);
     return Scaffold(
-      body: Row(children: [
-        Expanded(
+      body: Row(
+        children: [
+          Expanded(
             child: SafeArea(
-          child: Column(children: [
-            const ListHeader(),
-            Expanded(child: _buildEntryList(entriesAsync)),
-          ]),
-        )),
-      ]),
+              child: Column(
+                children: [
+                  const ListHeader(),
+                  Expanded(child: _buildEntryList(entriesAsync)),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 
@@ -48,17 +51,18 @@ class InboxCollection extends ConsumerWidget {
           },
         ),
       AsyncError() => const Text("oops, something is wrong"),
-      _ => const CircularProgressIndicator()
+      _ => const CircularProgressIndicator(),
     };
   }
 
   Widget _buildEntry(entry, int index) {
     return ListTile(
       leading: const Checkbox(
-          value: false,
-          onChanged: null,
-          shape: CircleBorder(),
-          materialTapTargetSize: MaterialTapTargetSize.shrinkWrap),
+        value: false,
+        onChanged: null,
+        shape: CircleBorder(),
+        materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+      ),
       title: Text(entry.title, style: const TextStyle(fontSize: 20)),
       horizontalTitleGap: 1,
     );
@@ -66,22 +70,23 @@ class InboxCollection extends ConsumerWidget {
 }
 
 class ListHeader extends StatelessWidget {
-  const ListHeader({
-    super.key,
-  });
+  const ListHeader({super.key});
 
   @override
   Widget build(BuildContext context) {
     return const Padding(
-        padding: EdgeInsets.all(23),
-        child: Align(
-            alignment: Alignment.centerLeft,
-            child: Text(
-              'Inbox',
-              style: TextStyle(
-                  fontSize: 48,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: "Kanit"),
-            )));
+      padding: EdgeInsets.all(23),
+      child: Align(
+        alignment: Alignment.centerLeft,
+        child: Text(
+          'Inbox',
+          style: TextStyle(
+            fontSize: 48,
+            fontWeight: FontWeight.bold,
+            fontFamily: "Kanit",
+          ),
+        ),
+      ),
+    );
   }
 }
