@@ -13,6 +13,6 @@ jobs:
           python-version: "3.13"
       - uses: subosito/flutter-action@v2
         with:
-          flutter-version: "3.29.0"
+          flutter-version: "3.x"
       - run: flutter pub get
       - uses: pre-commit/action@v3.0.1
