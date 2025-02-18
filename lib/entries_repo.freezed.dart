@@ -12,7 +12,8 @@ part of 'entries_repo.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
+  'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models',
+);
 
 Entry _$EntryFromJson(Map<String, dynamic> json) {
   return _Entry.fromJson(json);
@@ -53,23 +54,24 @@ class _$EntryCopyWithImpl<$Res, $Val extends Entry>
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? title = null,
-  }) {
-    return _then(_value.copyWith(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-    ) as $Val);
+  $Res call({Object? title = null}) {
+    return _then(
+      _value.copyWith(
+        title: null == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                as String,
+      ) as $Val,
+    );
   }
 }
 
 /// @nodoc
 abstract class _$$EntryImplCopyWith<$Res> implements $EntryCopyWith<$Res> {
   factory _$$EntryImplCopyWith(
-          _$EntryImpl value, $Res Function(_$EntryImpl) then) =
-      __$$EntryImplCopyWithImpl<$Res>;
+    _$EntryImpl value,
+    $Res Function(_$EntryImpl) then,
+  ) = __$$EntryImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String title});
@@ -80,22 +82,23 @@ class __$$EntryImplCopyWithImpl<$Res>
     extends _$EntryCopyWithImpl<$Res, _$EntryImpl>
     implements _$$EntryImplCopyWith<$Res> {
   __$$EntryImplCopyWithImpl(
-      _$EntryImpl _value, $Res Function(_$EntryImpl) _then)
-      : super(_value, _then);
+    _$EntryImpl _value,
+    $Res Function(_$EntryImpl) _then,
+  ) : super(_value, _then);
 
   /// Create a copy of Entry
   /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
-  $Res call({
-    Object? title = null,
-  }) {
-    return _then(_$EntryImpl(
-      title: null == title
-          ? _value.title
-          : title // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
+  $Res call({Object? title = null}) {
+    return _then(
+      _$EntryImpl(
+        title: null == title
+            ? _value.title
+            : title // ignore: cast_nullable_to_non_nullable
+                as String,
+      ),
+    );
   }
 }
 
@@ -137,9 +140,7 @@ class _$EntryImpl implements _Entry {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$EntryImplToJson(
-      this,
-    );
+    return _$$EntryImplToJson(this);
   }
 }
 

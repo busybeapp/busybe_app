@@ -25,14 +25,16 @@ class EntriesRepository {
   Future<List<Entry>> getEntries() async {
     final response = await dio.get("/api/entries");
     return List<Entry>.from(
-        response.data.map((model) => Entry(title: model["title"])));
+      response.data.map((model) => Entry(title: model["title"])),
+    );
   }
 }
 
 @riverpod
 EntriesRepository entriesRepository(Ref ref) {
   return EntriesRepository(
-      const String.fromEnvironment('CLOUD_URL', defaultValue: cloudUrl));
+    const String.fromEnvironment('CLOUD_URL', defaultValue: cloudUrl),
+  );
 }
 
 @riverpod

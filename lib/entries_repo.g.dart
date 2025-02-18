@@ -6,14 +6,11 @@ part of 'entries_repo.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$EntryImpl _$$EntryImplFromJson(Map<String, dynamic> json) => _$EntryImpl(
-      title: json['title'] as String,
-    );
+_$EntryImpl _$$EntryImplFromJson(Map<String, dynamic> json) =>
+    _$EntryImpl(title: json['title'] as String);
 
 Map<String, dynamic> _$$EntryImplToJson(_$EntryImpl instance) =>
-    <String, dynamic>{
-      'title': instance.title,
-    };
+    <String, dynamic>{'title': instance.title};
 
 // **************************************************************************
 // RiverpodGenerator
