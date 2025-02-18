@@ -16,7 +16,7 @@ repos:
     hooks:
       - id: dart-format
         name: Dart Formatter
-        entry: dart format --indent 2 --set-exit-if-changed .
+        entry: dart format --set-exit-if-changed .
         language: system
         pass_filenames: false
       - id: flutter-analyze
