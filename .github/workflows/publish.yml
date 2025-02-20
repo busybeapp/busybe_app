@@ -1,4 +1,4 @@
-name: Publish APK
+name: Publish Releases
 
 on:
   release:
@@ -26,11 +26,55 @@ jobs:
       - name: Build APK
         run: flutter build apk --release
 
+      - name: Rename APK
+        run: mv build/app/outputs/flutter-apk/app-release.apk build/app/outputs/flutter-apk/busybe.apk
+
       - name: Upload APK to Release
         uses: softprops/action-gh-release@v1
         with:
           tag_name: ${{ github.event.release.tag_name }}
-          files: build/app/outputs/flutter-apk/app-release.apk
+          files: build/app/outputs/flutter-apk/busybe.apk
+          overwrite: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  build-macos:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.x"
+
+      - name: Install Dependencies
+        run: flutter pub get
+
+      - name: Enable macOS Build
+        run: flutter config --enable-macos-desktop
+
+      - name: Build macOS App
+        run: flutter build macos --release
+
+      - name: Install create-dmg Tool
+        run: npm install -g create-dmg
+
+      - name: Package macOS App into .dmg
+        run: |
+          mkdir -p build/macos-release
+          APP_NAME=$(ls build/macos/Build/Products/Release | grep .app)
+          create-dmg "build/macos/Build/Products/Release/$APP_NAME" build/macos-release/ --overwrite
+          mv build/macos-release/*.dmg build/macos-release/busybe.dmg
+
+      - name: Upload macOS Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: ${{ github.event.release.tag_name }}
+          files: build/macos-release/busybe.dmg
           overwrite: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
