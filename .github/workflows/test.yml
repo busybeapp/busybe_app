@@ -15,6 +15,28 @@ jobs:
 
       # - run: make unit-tests
 
+  mac-test:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - run: flutter pub get
+
+      - run: make start-wiremock &
+
+      - name: Get available devices
+        run: flutter devices
+
+      - name: Run integration tests
+        timeout-minutes: 15
+        run: |
+          make integration-tests DEVICE=macOS
+
   ios-test:
     runs-on: macos-latest
 
@@ -38,7 +60,7 @@ jobs:
       - name: Run integration tests
         timeout-minutes: 15
         run: |
-          make integration-tests
+            make integration-tests
 
   android-test:
     runs-on: ubuntu-latest

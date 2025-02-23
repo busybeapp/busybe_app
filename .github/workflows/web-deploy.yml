@@ -2,7 +2,7 @@ name: Web Deploy
 
 on:
   push:
-    branchs: [ main ]
+    branches: [ main ]
     tags:
       - '*'
 
