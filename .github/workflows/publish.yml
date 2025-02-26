@@ -5,6 +5,7 @@ on:
     types:
       - published
       - edited
+  workflow_dispatch:  # 👈 Enables manual trigger
 
 jobs:
   build-apk:
