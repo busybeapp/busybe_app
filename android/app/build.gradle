@@ -37,6 +37,12 @@ android {
         jvmTarget = "18"
     }
 
+    tasks.withType(JavaCompile).configureEach {
+        javaCompiler = javaToolchains.compilerFor {
+            languageVersion.set(JavaLanguageVersion.of(18))
+        }
+    }
+
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId = "app.clearslate.clearslate_app"
