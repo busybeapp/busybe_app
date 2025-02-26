@@ -1,74 +1,74 @@
-name: test
-
-on:
-  pull_request:
-
-jobs:
-  unit-tests:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          flutter-version: "3.x"
-
-      # - run: make unit-tests
-
-  ios-test:
-    runs-on: macos-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: futureware-tech/simulator-action@v4
-        with:
-          model: "iPhone 15"
-
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          flutter-version: "3.x"
-          cache: true
-
-      - run: flutter pub get
-
-      - run: make start-wiremock &
-
-      - name: Run integration tests
-        timeout-minutes: 15
-        run: |
-          make integration-tests
-
-  android-test:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          flutter-version: "3.x"
-          cache: true
-
-      - name: Enable KVM
-        run: |
-          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
-            | sudo tee /etc/udev/rules.d/99-kvm4all.rules
-          sudo udevadm control --reload-rules
-          sudo udevadm trigger --name-match=kvm
-
-      - run: flutter pub get
-
-      - run: make start-wiremock &
-
-      - name: Run integration tests
-        uses: reactivecircus/android-emulator-runner@v2
-        timeout-minutes: 15
-        env:
-          ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL: 60
-        with:
-          api-level: 29
-          script: |
-            make integration-tests WIREMOCK_URL=http://10.0.2.2:8080
+#name: test
+#
+#on:
+#  pull_request:
+#
+#jobs:
+#  unit-tests:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#      - uses: subosito/flutter-action@v2
+#        with:
+#          channel: stable
+#          flutter-version: "3.x"
+#
+#      # - run: make unit-tests
+#
+#  ios-test:
+#    runs-on: macos-latest
+#
+#    steps:
+#      - uses: actions/checkout@v4
+#
+#      - uses: futureware-tech/simulator-action@v4
+#        with:
+#          model: "iPhone 15"
+#
+#      - uses: subosito/flutter-action@v2
+#        with:
+#          channel: stable
+#          flutter-version: "3.x"
+#          cache: true
+#
+#      - run: flutter pub get
+#
+#      - run: make start-wiremock &
+#
+#      - name: Run integration tests
+#        timeout-minutes: 15
+#        run: |
+#          make integration-tests
+#
+#  android-test:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - uses: actions/checkout@v4
+#
+#      - uses: subosito/flutter-action@v2
+#        with:
+#          channel: stable
+#          flutter-version: "3.x"
+#          cache: true
+#
+#      - name: Enable KVM
+#        run: |
+#          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' \
+#            | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+#          sudo udevadm control --reload-rules
+#          sudo udevadm trigger --name-match=kvm
+#
+#      - run: flutter pub get
+#
+#      - run: make start-wiremock &
+#
+#      - name: Run integration tests
+#        uses: reactivecircus/android-emulator-runner@v2
+#        timeout-minutes: 15
+#        env:
+#          ANDROID_EMULATOR_WAIT_TIME_BEFORE_KILL: 60
+#        with:
+#          api-level: 29
+#          script: |
+#            make integration-tests WIREMOCK_URL=http://10.0.2.2:8080

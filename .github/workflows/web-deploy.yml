@@ -1,41 +1,41 @@
-name: Web Deploy
-
-on:
-  push:
-    branchs: [ main ]
-    tags:
-      - '*'
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          flutter-version: "3.x"
-
-      - name: Install Dependencies
-        run: flutter pub get
-
-      - name: Build Web App
-        run: flutter build web
-
-      - name: Checkout Web App
-        uses: actions/checkout@v4
-        with:
-          repository: busybeapp/busybe-web-app
-          token: ${{ secrets.CLEARSLATE_PAT }}
-          path: webapp
-
-      - name: Push Web App
-        run: |
-          cd webapp
-          cp -a ../build/web/. ./docs/
-          git config user.name "web-deploy"
-          git config user.email "web-deploy@github.com"
-          git commit -am "${{ github.event.head_commit.message }}"
-          git push origin main
+#name: Web Deploy
+#
+#on:
+#  push:
+#    branchs: [ main ]
+#    tags:
+#      - '*'
+#
+#jobs:
+#  deploy:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v4
+#
+#      - name: Setup Flutter
+#        uses: subosito/flutter-action@v2
+#        with:
+#          channel: stable
+#          flutter-version: "3.x"
+#
+#      - name: Install Dependencies
+#        run: flutter pub get
+#
+#      - name: Build Web App
+#        run: flutter build web
+#
+#      - name: Checkout Web App
+#        uses: actions/checkout@v4
+#        with:
+#          repository: busybeapp/busybe-web-app
+#          token: ${{ secrets.CLEARSLATE_PAT }}
+#          path: webapp
+#
+#      - name: Push Web App
+#        run: |
+#          cd webapp
+#          cp -a ../build/web/. ./docs/
+#          git config user.name "web-deploy"
+#          git config user.email "web-deploy@github.com"
+#          git commit -am "${{ github.event.head_commit.message }}"
+#          git push origin main
