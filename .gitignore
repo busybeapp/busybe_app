@@ -8,6 +8,7 @@ Podfile.lock
 .flutter-plugins
 .flutter-plugins-dependencies
 .dart_tool/
+flutter_jank*
 
 *.log
 .DS_Store
