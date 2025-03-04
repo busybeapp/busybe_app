@@ -6,7 +6,7 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'entries_repo.freezed.dart';
 part 'entries_repo.g.dart';
 
-const cloudUrl = 'https://clear-slate-8b4de92f5776.herokuapp.com';
+const cloudUrl = 'https://cloud.busybeapp.com';
 
 @freezed
 class Entry with _$Entry {
